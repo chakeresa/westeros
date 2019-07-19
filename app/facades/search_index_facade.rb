@@ -8,7 +8,12 @@ class SearchIndexFacade
   end
 
   def members
-    @members ||= westeros_api_service.members(@house)
+    return @members if @members
+
+    members_ary = westeros_api_service.members(@house)[:data].first[:attributes][:members]
+    @members = members_ary.map do |member_data|
+      Person.new(member_data)
+    end
   end
 
   private
