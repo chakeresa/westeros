@@ -3,5 +3,17 @@ class SearchIndexFacade
     @house = house
   end
 
-  # "http://westerosapi.herokuapp.com/api/v1/house/PUT_HOUSE_HERE?api_key=YOUR_KEY_HERE"
+  def member_count
+    members.count
+  end
+
+  def members
+    @members ||= westeros_api_service.members(@house)
+  end
+
+  private
+
+  def westeros_api_service
+    WesterosApiService.new
+  end
 end
