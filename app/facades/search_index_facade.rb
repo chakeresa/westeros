@@ -10,7 +10,7 @@ class SearchIndexFacade
   def members
     return @members if @members
 
-    members_ary = westeros_aas_api_service.members(@house)[:data].first[:attributes][:members]
+    members_ary = westeros_aas_api_service.members(@house)
     @members = members_ary.map do |member_data|
       Person.new(member_data)
     end
