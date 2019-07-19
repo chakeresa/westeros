@@ -8,7 +8,7 @@ RSpec.describe 'visitor searches for members of a house' do
     click_button 'Get Members'
 
     # Then my path should be "/search" with "house=greyjoy" in the parameters
-    expect(current_path).to eq('/search?house=greyjoy')
+    expect(current_path).to eq('/search')
 
     expect(page).to have_content('7 Members')
 
