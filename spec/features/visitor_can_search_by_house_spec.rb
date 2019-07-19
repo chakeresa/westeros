@@ -4,6 +4,9 @@ RSpec.describe 'visitor searches for members of a house' do
   it 'shows house members' do
     visit '/'
 
+    expected_houses = ['Stark', 'Lannister', 'Targaryen', 'Tyrell', 'Greyjoy']
+    expect(page).to have_select('house', with_options: expected_houses)
+
     find('#house').select('Greyjoy')
     click_button 'Get Members'
 
