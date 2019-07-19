@@ -9,6 +9,14 @@ RSpec.describe WesterosAasApiService do
     expect(@service).to be_a(WesterosAasApiService)
   end
 
+  it '#house_name_by_id gets the name of a house (given an ID)' do
+    VCR.use_cassette('api_service_house_name_by_id', record: :new_episodes) do
+      house_name = @service.house_name_by_id(5)
+      
+      expect(house_name).to eq('Greyjoy')
+    end
+  end
+
   it '#members gets data for members of a particular house (given an ID)' do
     VCR.use_cassette('api_service_members', record: :new_episodes) do
       members = @service.members(5)

@@ -116,4 +116,61 @@ http_interactions:
         Greyjoy"},{"id":44,"name":"Euron Greyjoy"}]'
     http_version: 
   recorded_at: Fri, 19 Jul 2019 17:27:13 GMT
+- request:
+    method: get
+    uri: https://westeros-as-a-service.herokuapp.com/api/v1/house/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      X-Api-Key:
+      - "<WESTEROS_AAS_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 19 Jul 2019 17:42:13 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5985e53f7bddef7c6c9bc97c49a0ae20"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6acdfb2e-fc79-4b39-a6af-e3d134ea3f8b
+      X-Runtime:
+      - '0.009027'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"name":"Stark"},{"id":2,"name":"Lannister"},{"id":3,"name":"Targaryen"},{"id":4,"name":"Tyrell"},{"id":5,"name":"Greyjoy"}]'
+    http_version: 
+  recorded_at: Fri, 19 Jul 2019 17:41:42 GMT
 recorded_with: VCR 5.0.0

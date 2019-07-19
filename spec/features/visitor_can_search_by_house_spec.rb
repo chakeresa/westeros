@@ -14,6 +14,10 @@ RSpec.describe 'visitor searches for members of a house' do
       # Then my path should be "/search" with "house=greyjoy" in the parameters
       expect(current_path).to eq('/search')
 
+      within('h1') do
+        expect(page).to have_content('House Greyjoy')
+      end
+
       expect(page).to have_content('7 Members')
 
       # And I should see a list of the 7 members of House Greyjoy

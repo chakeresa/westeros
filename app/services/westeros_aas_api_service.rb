@@ -1,4 +1,10 @@
 class WesterosAasApiService
+  def house_name_by_id(house_id)
+    house_list.find do |house|
+      house[:id] == house_id.to_i
+    end[:name]
+  end
+
   def members(house_id)
     fetch_data("api/v1/house/#{house_id}")
   end

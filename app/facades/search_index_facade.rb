@@ -3,6 +3,10 @@ class SearchIndexFacade < BaseFacade
     @house_id = house_id
   end
 
+  def house_name
+    westeros_aas_api_service.house_name_by_id(@house_id)
+  end
+
   def member_count
     members.count
   end
