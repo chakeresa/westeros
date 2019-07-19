@@ -1,6 +1,5 @@
 class WesterosAasApiService
-  def members(house_name)
-    house_id = house_id_from_name(house_name)
+  def members(house_id)
     fetch_data("api/v1/house/#{house_id}")
   end
 
@@ -9,12 +8,6 @@ class WesterosAasApiService
   end
 
   private
-
-  def house_id_from_name(house_name)
-    house_list.find do |house|
-      house[:name] == house_name
-    end[:id]
-  end
 
   def conn
     @conn ||= Faraday.new(url: 'https://westeros-as-a-service.herokuapp.com') do |f|
