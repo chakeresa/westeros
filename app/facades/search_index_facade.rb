@@ -1,4 +1,4 @@
-class SearchIndexFacade
+class SearchIndexFacade < BaseFacade
   def initialize(house_id)
     @house_id = house_id
   end
@@ -14,11 +14,5 @@ class SearchIndexFacade
     @members = members_ary.map do |member_data|
       Person.new(member_data)
     end
-  end
-
-  private
-
-  def westeros_aas_api_service
-    WesterosAasApiService.new
   end
 end
