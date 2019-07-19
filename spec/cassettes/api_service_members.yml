@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://westeros-as-a-service.herokuapp.com/api/v1/house/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      X-Api-Key:
+      - "<WESTEROS_AAS_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 19 Jul 2019 17:29:24 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"899a2f5bd450819e8dc667a6d269ecf2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a7141113-2644-43c8-a913-666deacc5f67
+      X-Runtime:
+      - '0.018662'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":38,"name":"Balon Greyjoy"},{"id":39,"name":"Alannys Greyjoy"},{"id":40,"name":"Rodrik
+        Greyjoy"},{"id":41,"name":"Maron Greyjoy"},{"id":42,"name":"Yara Greyjoy"},{"id":43,"name":"Theon
+        Greyjoy"},{"id":44,"name":"Euron Greyjoy"}]'
+    http_version: 
+  recorded_at: Fri, 19 Jul 2019 17:28:53 GMT
+recorded_with: VCR 5.0.0

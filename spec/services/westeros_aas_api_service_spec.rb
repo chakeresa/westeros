@@ -10,18 +10,22 @@ RSpec.describe WesterosAasApiService do
   end
 
   it '#members gets data for members of a particular house (given an ID)' do
-    members = @service.members(5)
-
-    expect(members.count).to eq(7)
-    expect(members.first).to have_key(:name)
-    expect(members.first).to have_key(:id)
+    VCR.use_cassette('api_service_members', record: :new_episodes) do
+      members = @service.members(5)
+      
+      expect(members.count).to eq(7)
+      expect(members.first).to have_key(:name)
+      expect(members.first).to have_key(:id)
+    end
   end
   
   it '#house_list lists the names (and IDs) of all houses' do
-    house_list = @service.house_list
-  
-    expect(house_list.count).to eq(5)
-    expect(house_list.first).to have_key(:name)
-    expect(house_list.first).to have_key(:id)
+    VCR.use_cassette('api_service_house_list', record: :new_episodes) do
+      house_list = @service.house_list
+    
+      expect(house_list.count).to eq(5)
+      expect(house_list.first).to have_key(:name)
+      expect(house_list.first).to have_key(:id)
+    end
   end
 end
